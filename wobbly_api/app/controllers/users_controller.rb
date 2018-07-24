@@ -18,6 +18,12 @@ class UsersController < ApplicationController
       end
     end
     
+    def show
+      binding.pry
+      @user = User.find_by(id: params[id])
+      
+    end 
+    
     def user_params
       params.require(:user).permit(:name, :email, :password, :img_url)
     end
